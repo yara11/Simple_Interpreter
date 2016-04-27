@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1461788801 source:c:\users\user\desktop\simple interpreter\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<iostream>
+	<unordered_map>
+	"Stack.h"
+
+1461789483 c:\users\user\desktop\simple interpreter\stack.h
+
+1461789639 source:c:\users\user\desktop\simple interpreter\stack.cpp
+	"Stack.h"
+
+1461789570 source:c:\users\user\desktop\simple interpreter\charstack.cpp
+	"Stack.h"
+
