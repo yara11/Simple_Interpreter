@@ -4,9 +4,11 @@
 #include <string.h>
 #include <iostream>
 #include <unordered_map>
+#include <sstream>
+#include <vector>
 #define TYPE double
 #include "Stack.h"
-
+#include "InfixPostfix.h"
 using namespace std;
 
 unordered_map<string,double> MAP;
@@ -87,7 +89,45 @@ int validateExpression(string exp){
     return 1;
 }
 
+int doEvaluation(string exp){
+
+    /** Step -1 : check that expression is non-empty and valid **/
+    int v = validateExpression(exp);
+    cout<<"["<<v<<"]";
+    if(v != 1)  return v;
+    /** Step 0 : get name of variable to store expression in**/
+    int n = exp.size(), j = 0, i = 0;
+    string variableToStore;
+
+    while(exp[i] == ' ')    i++;
+    j = i;
+    while(isalpha(exp[j]))  j++;
+    variableToStore = exp.substr(i, j - i);
+    i = j;
+    while(exp[i] == ' ' || exp[i] == '=')    i++;
+
+    /** Step 1 : convert infix to postfix and add expression in an int array (rather than a string) **/
+    vector<string> postfix = infixToPostfix(exp.substr(i));
+    for(int i = 0; i < postfix.size(); i++)
+        cout<<postfix[i]<<" ";
+    cout<<"\n";
+    MAP[variableToStore] = 1;
+
+    /** Step 2 : evaluate postfix **/
+    /** Step 3 : save <key,value> in map **/
+
+    return 1;
+}
+
 int main()
 {
+    doEvaluation("X = .532");
+    doEvaluation("XYz = 2*(3+2)");
+    doEvaluation("X = (12.5*X)/2.0"); // okay good...
+    doEvaluation("Y = (X * (4/5))");
+    doEvaluation("Z = X*Y/5");
+    doEvaluation("Z=");
+    doEvaluation("");
+    doEvaluation("X = 1.05");
     return 0;
 }
