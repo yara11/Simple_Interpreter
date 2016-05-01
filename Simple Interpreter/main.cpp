@@ -9,6 +9,7 @@
 #define TYPE double
 #include "Stack.h"
 #include "InfixPostfix.h"
+#include "EvaluatePostfix.h"
 using namespace std;
 
 unordered_map<string,double> MAP;
@@ -114,6 +115,8 @@ int doEvaluation(string exp){
     MAP[variableToStore] = 1;
 
     /** Step 2 : evaluate postfix **/
+    double ans = evaluatePostfix(postfix);
+    cout<<"Value of expression:  "<<ans<<"\n";
     /** Step 3 : save <key,value> in map **/
 
     return 1;
@@ -121,7 +124,7 @@ int doEvaluation(string exp){
 
 int main()
 {
-    doEvaluation("X = .532");
+    doEvaluation("X = .532 + .5");
     doEvaluation("XYz = 2*(3+2)");
     doEvaluation("X = (12.5*X)/2.0"); // okay good...
     doEvaluation("Y = (X * (4/5))");
@@ -129,5 +132,8 @@ int main()
     doEvaluation("Z=");
     doEvaluation("");
     doEvaluation("X = 1.05");
+    doEvaluation("X = 32 + 64");
+    doEvaluation("x = 6*7+Y");
+    doEvaluation("y = 2.5 +3.5");
     return 0;
 }

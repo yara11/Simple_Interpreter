@@ -7,7 +7,7 @@ using namespace std;
 
 
 // converts a pair of integers to a double x = a.b
-double makeDouble(int whole,int frac, int k){
+/*double makeDouble(int whole,int frac, int k){
     double a = (double)whole;
     double b = (double)frac;
     // divide b by 10^(no. of digits in frac)
@@ -16,7 +16,7 @@ double makeDouble(int whole,int frac, int k){
         b /= 10;
     }
     return b + a;
-}
+}*/
 
 // TO DO : ADD MOD
 int precedence(char c){

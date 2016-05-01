@@ -7,13 +7,13 @@ template<typename MyType>
 struct Node{
 	MyType data;
 	Node* next;
-	Node* newNode(MyType val){
-        Node* n = new Node;
-        n->data = val;
-        n->next = 0;
-        return n;
+	Node(MyType val){
+        data = val;
+        next = 0;
     }
 };
+//Node* n = newNode(val);
+//Node<int>* n = new Node(val);
 
 template<typename MyType>
 class Stack{
@@ -27,31 +27,29 @@ public:
     }
 
     void push(MyType val){
-        Node<MyType>* newTop = newNode(val);
-        newTop->next = top;
-        top = newTop;
+        Node<MyType>* newTop = new Node<MyType>(val);
+        newTop->next = this->top;
+        this->top = newTop;
     }
 
     MyType pop(){
-        if(top == 0)
-            exit(-1);
-            ///return 0; ///not good, but a case that won't happen anyway
-        Node<MyType>* temp = top;
+        if(top == NULL)
+            return 0; ///not good, but a case that won't happen anyway
+        Node<MyType>* temp = this->top;
         MyType ret = temp->data;
-        top = temp->next;
+        this->top = this->top->next;
         delete temp;
         return ret;
     }
 
     MyType peek(){
-        if(top == 0)
-            exit(-1);
-            ///return 0; ///not good, but a case that won't happen anyway
+        if(top == NULL)
+            return 0; ///not good, but a case that won't happen anyway
         return top->data;
     }
 
     bool isEmpty(){
-        return top == 0;
+        return top == NULL;
     }
 
 private:
