@@ -32,6 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="EvaluatePostfix.cpp" />
+		<Unit filename="EvaluatePostfix.h" />
+		<Unit filename="InfixPostfix.cpp" />
+		<Unit filename="InfixPostfix.h" />
+		<Unit filename="Stack.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

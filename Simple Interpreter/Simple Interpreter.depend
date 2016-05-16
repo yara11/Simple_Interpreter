@@ -16,3 +16,38 @@
 1461789570 source:c:\users\user\desktop\simple interpreter\charstack.cpp
 	"Stack.h"
 
+1463400280 source:d:\college\2nd year\2nd term\data structures\simple interpreter\evaluatepostfix.cpp
+	"EvaluatePostfix.h"
+	"Stack.h"
+
+1463400268 d:\college\2nd year\2nd term\data structures\simple interpreter\evaluatepostfix.h
+	<vector>
+	<iostream>
+	<unordered_map>
+
+1461851180 d:\college\2nd year\2nd term\data structures\simple interpreter\stack.h
+	<iostream>
+
+1461855356 source:d:\college\2nd year\2nd term\data structures\simple interpreter\infixpostfix.cpp
+	"InfixPostfix.h"
+	<vector>
+	<iostream>
+	"Stack.h"
+
+1461852342 d:\college\2nd year\2nd term\data structures\simple interpreter\infixpostfix.h
+	<vector>
+	<iostream>
+
+1463414722 source:d:\college\2nd year\2nd term\data structures\simple interpreter\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<iostream>
+	<unordered_map>
+	<sstream>
+	<vector>
+	"Stack.h"
+	"InfixPostfix.h"
+	"EvaluatePostfix.h"
+

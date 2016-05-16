@@ -39,7 +39,7 @@ double evaluate(double A, double B, char o)
         //default: break;
     }
 }
-double evaluatePostfix(vector<string>&postfix)
+double evaluatePostfix(vector<string>&postfix, unordered_map<string,double>&MAP)
 {
     int sz = postfix.size(),k,j;
     double temp,tempdicemel;
@@ -85,7 +85,9 @@ double evaluatePostfix(vector<string>&postfix)
                 tempdicemel/=10;
             stck.push(temp+tempdicemel);
         }
-
+        else if(isalpha(postfix[i][0])){
+            stck.push(MAP[postfix[i]]);
+        }
         else if(isOperator(postfix[i]))
         {
             double a = stck.pop();
